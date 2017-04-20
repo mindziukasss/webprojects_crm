@@ -11,6 +11,22 @@
 |
 */
 
+use App\Model\WPPersons;
+
 Route::get('/', function () {
-    return view('welcome');
+
+//    dd(WPPersons::get()->toArray());
+//    return view('welcome');
+    return WPPersons::get();
+});
+
+
+Route::get('/new', function (){
+
+   return WPPersons::create([
+        'id' => \Ramsey\Uuid\Uuid::uuid4(),
+        'name' => 'Jonas',
+        'email' => 'jonas@test.com',
+        'phone' => '+44056231'
+    ]);
 });

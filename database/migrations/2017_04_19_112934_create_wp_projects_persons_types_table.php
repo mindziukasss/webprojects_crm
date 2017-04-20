@@ -14,11 +14,11 @@ class CreateWpProjectsPersonsTypesTable extends Migration {
 	{
 		Schema::create('wp_projects_persons_types', function(Blueprint $table)
 		{
-			$table->integer('count', true);
 			$table->string('id', 36)->unique('id');
-			$table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-			$table->timestamp('update_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-			$table->dateTime('delete_at')->nullable();
+			$table->integer('count', true);
+			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->dateTime('deleted_at')->nullable();
 			$table->string('name');
 			$table->text('description', 65535);
 		});

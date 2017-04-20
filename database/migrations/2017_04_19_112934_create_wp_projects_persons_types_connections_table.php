@@ -14,9 +14,9 @@ class CreateWpProjectsPersonsTypesConnectionsTable extends Migration {
 	{
 		Schema::create('wp_projects_persons_types_connections', function(Blueprint $table)
 		{
-			$table->integer('count', true);
 			$table->string('id', 36)->unique('id');
-			$table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->integer('count', true);
+			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->string('projects_id', 36)->index('fk_wp_projects_persons_types_connections_wb_projects1_idx');
 			$table->string('persons_id', 36)->index('fk_wp_projects_persons_types_connections_wp_persons1_idx');
 			$table->string('employe_types_id', 36)->index('fk_wp_projects_persons_types_connections_wp_employe_types1_idx');

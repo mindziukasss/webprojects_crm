@@ -14,9 +14,9 @@ class CreateWpProjectsLoginsConnectionTable extends Migration {
 	{
 		Schema::create('wp_projects_logins_connection', function(Blueprint $table)
 		{
-			$table->integer('count', true);
 			$table->string('id', 36)->unique('id');
-			$table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->integer('count', true);
+			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->string('projects_id', 36)->index('fk_wp_projects_logins_connection_wb_projects1_idx');
 			$table->string('logins_id', 36)->index('fk_wp_projects_logins_connection_wp_logins1_idx');
 		});
