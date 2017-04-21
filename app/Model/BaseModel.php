@@ -42,7 +42,7 @@ class BaseModel extends Model
             return $this->attributes['id'];
         }
 
-        return uuid4();
+        return Uuid::uuid4();
     }
 
 }

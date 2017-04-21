@@ -18,7 +18,7 @@ class WPFakeDataController extends Controller
         for ($i = 0; $i < $count; $i++) {
 
             $data[] = [
-                'id' => $faker->uuid,
+
                 'name' => $faker->name,
                 'email' => $faker->email,
                 'phone' => $faker->phoneNumber
