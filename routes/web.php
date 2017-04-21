@@ -20,4 +20,9 @@ Route::get('/persons', [
 
 ]);
 
+Route::get('/generate-fake-data/persons/{count?}', [
+
+    'uses' => 'WPFakeDataController@generatePersons'
+
+]);
 
