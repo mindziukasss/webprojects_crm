@@ -13,20 +13,11 @@
 
 use App\Model\WPPersons;
 
-Route::get('/', function () {
 
-//    dd(WPPersons::get()->toArray());
-//    return view('welcome');
-    return WPPersons::get();
-});
+Route::get('/persons', [
+
+    'uses' => 'WPPersonsController@index'
+
+]);
 
 
-Route::get('/new', function (){
-
-   return WPPersons::create([
-        'id' => \Ramsey\Uuid\Uuid::uuid4(),
-        'name' => 'Jonas',
-        'email' => 'jonas@test.com',
-        'phone' => '+44056231'
-    ]);
-});
