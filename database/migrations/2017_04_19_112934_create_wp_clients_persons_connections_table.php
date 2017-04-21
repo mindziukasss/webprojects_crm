@@ -14,9 +14,9 @@ class CreateWpClientsPersonsConnectionsTable extends Migration {
 	{
 		Schema::create('wp_clients_persons_connections', function(Blueprint $table)
 		{
-			$table->integer('count', true);
 			$table->string('id', 36)->unique('id');
-			$table->timestamp('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->integer('count', true);
+			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->string('clients_id', 36)->index('fk_wp_clients_persons_connections_wp_clients_idx');
 			$table->string('person_id', 36)->index('fk_wp_clients_persons_connections_wp_persons1_idx');
 			$table->string('clients_persons_type_id', 36)->index('fk_wp_clients_persons_connections_wp_clients_persons_types1_idx');

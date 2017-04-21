@@ -9,13 +9,10 @@
 namespace App\Model;
 
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class WPClients extends Model
+class WPClients extends BaseModel
 
 {
-   use SoftDeletes;
     /**
      * table name
      * @var string

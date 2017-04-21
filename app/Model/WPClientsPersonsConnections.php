@@ -9,9 +9,8 @@
 namespace App\Model;
 
 
-use Illuminate\Database\Eloquent\Model;
 
-class WPClientsPersonsConnections extends Model
+class WPClientsPersonsConnections extends BaseModel
 {
     /**
      * Table name

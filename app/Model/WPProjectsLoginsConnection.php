@@ -9,9 +9,8 @@
 namespace App\Model;
 
 
-use Illuminate\Database\Eloquent\Model;
 
-class WPProjectsLoginsConnection extends Model
+class WPProjectsLoginsConnection extends BaseModel
 {
     /**
      * Table name

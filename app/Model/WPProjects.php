@@ -9,13 +9,10 @@
 namespace App\Model;
 
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class WPProjects extends Model
+class WPProjects extends BaseModel
 
 {
-    use SoftDeletes;
     /**
      * Table name
      * @var string

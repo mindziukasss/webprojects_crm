@@ -2,12 +2,10 @@
 
 namespace App\Model;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class WPPersons extends Model
+class WPPersons extends BaseModel
 {
-    use SoftDeletes;
+
     /**
      * Table name
      * @var string
