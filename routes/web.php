@@ -14,15 +14,8 @@
 use App\Model\WPPersons;
 
 
-Route::get('/persons', [
+Route::get('/persons', ['uses' => 'WPPersonsController@index']);
+Route::get('/generate-fake-data/persons/{count?}', ['uses' => 'WPFakeDataController@generatePersons']);
 
-    'uses' => 'WPPersonsController@index'
-
-]);
-
-Route::get('/generate-fake-data/persons/{count?}', [
-
-    'uses' => 'WPFakeDataController@generatePersons'
-
-]);
-
+Route::get('/clients', ['uses' => 'WPClientsController@index']);
+Route::get('/generate-fake-data/clients/{count?}', ['uses' => 'WPFakeDataController@generateClients']);
