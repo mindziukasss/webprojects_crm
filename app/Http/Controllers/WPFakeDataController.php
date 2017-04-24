@@ -12,6 +12,7 @@ use App\Model\WPProjects;
 use App\Model\WPProjectsLoginsConnection;
 use App\Model\WPProjectsPersonsTypes;
 use App\Model\WPProjectsPersonsTypesConnections;
+use App\Model\WPProjectsTypes;
 use Faker\Factory;
 use Illuminate\Http\Request;
 
@@ -83,7 +84,7 @@ class WPFakeDataController extends Controller
                 'id' => $faker->uuid,
                 'clients_id' => WPClients::all()->random()->id,
                 'person_id' => WPPersons::all()->random()->id,
-                'clients_persons_type_id'=> WPClientsPersonsTypes::all()->random()->id,
+                'clients_persons_type_id' => WPClientsPersonsTypes::all()->random()->id,
                 'comment' => $faker->text
             ]);
         }
@@ -144,7 +145,6 @@ class WPFakeDataController extends Controller
     }
 
 
-
     public function generateProjectsPersonsTypesConnections(int $count = 2)
     {
         $faker = Factory::create();
@@ -160,6 +160,20 @@ class WPFakeDataController extends Controller
         }
     }
 
+    public function generateProjectsTypes(int $count = 2)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++) {
+            WPProjectsTypes::create([
+                'id' => $faker->uuid,
+                'project_id' => WPProjects::all()->random()->id,
+                'name' => $faker->name,
+                'types' => $faker->randomElement(['SASS', 'SHOP', 'WEB']),
+                'description' => $faker->text
+            ]);
+        }
+    }
 
 
 }
