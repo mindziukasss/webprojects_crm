@@ -13,7 +13,6 @@
 
 use App\Model\WPPersons;
 
-
 Route::get('/persons', ['uses' => 'WPPersonsController@index']);
 Route::get('/generate-fake-data/persons/{count?}',
     ['uses' => 'WPFakeDataController@generatePersons']);
@@ -45,7 +44,7 @@ Route::get('/generate-fake-data/projects_logins_connection/{count?}',
     ['uses' => 'WPFakeDataController@generateProjectsLoginsConnection']);
 
 
-Route::get('/projects-persons-types', ['uses' => 'WPProjectsPersonsTypes@index']);
+Route::get('/projects-persons-types', ['uses' => 'WPProjectsPersonsTypesController@index']);
 Route::get('/generate-fake-data/projects-persons-types/{count?}',
     ['uses' => 'WPFakeDataController@generateProjectsPersonsTypes']);
 
