@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Model\WPClients;
 use App\Model\WPClientsPersonsConnections;
 use App\Model\WPClientsPersonsTypes;
+use App\Model\WPLogins;
 use App\Model\WPLoginsName;
 use App\Model\WPPersons;
 use App\Model\WPProjects;
@@ -98,6 +99,20 @@ class WPFakeDataController extends Controller
         }
     }
 
+    public function generateLogins(int $count = 2)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++) {
+            WPLogins::create([
+                'id' => $faker->uuid,
+                'logins_name_id' => WPLoginsname::all()->random()->id,
+                'user' => $faker->userName,
+                'password' => $faker->password,
+                'login_url' => $faker->url
+            ]);
+        }
+    }
 
 
 

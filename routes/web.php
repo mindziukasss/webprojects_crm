@@ -37,5 +37,9 @@ Route::get('/loginsname', ['uses' => 'WPLoginsNameController@index']);
 Route::get('/generate-fake-data/logins-name/{count?}',
     ['uses' => 'WPFakeDataController@generateLoginsName']);
 
+Route::get('/logins', ['uses' => 'WPLoginsController@index']);
+Route::get('/generate-fake-data/logins/{count?}',
+    ['uses' => 'WPFakeDataController@generateLogins']);
+
 
 
