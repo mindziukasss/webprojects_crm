@@ -26,3 +26,7 @@ Route::get('/projects', ['uses' => 'WPProjectsController@index']);
 Route::get('/generate-fake-data/projects/{count?}',
     ['uses' => 'WPFakeDataController@generateProjects']);
 
+Route::get('/clients_persons_type', ['uses' => 'WPClientsPersonsTypesController@index']);
+Route::get('/generate-fake-data/clients_persons_type/{count?}',
+    ['uses' => 'WPFakeDataController@generateClientsPersonsType']);
+

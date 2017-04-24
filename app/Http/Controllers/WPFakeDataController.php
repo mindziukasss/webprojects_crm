@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\WPClients;
+use App\Model\WPClientsPersonsTypes;
 use App\Model\WPPersons;
 use App\Model\WPProjects;
 use Faker\Factory;
@@ -37,16 +38,31 @@ class WPFakeDataController extends Controller
         }
 
     }
+
     public function generateProjects(int $count = 3)
     {
         $faker = Factory::create();
 
         for ($i = 0; $i < $count; $i++) {
-            WPProjects::created([
+            WPProjects::create([
                 'id' => $faker->uuid,
                 'clients_id' => WPClients::all()->random()->id,
                 'name' => $faker->randomElement(['Simple pr', 'Big data', 'Car_shop']),
                 'type' => $faker->randomElement(['SASS', 'SHOP', 'WEB']),
+                'description' => $faker->text
+            ]);
+        }
+    }
+
+    public function generateClientsPersonsType(int $count = 3)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++) {
+            WPClientsPersonsTypes::create([
+                'id' => $faker->uuid,
+                'clients_persons_type' => $faker->randomElement(['manager', 'accountant', 'designers', 'people']),
+                'name' => $faker->name,
                 'description' => $faker->text
             ]);
         }
