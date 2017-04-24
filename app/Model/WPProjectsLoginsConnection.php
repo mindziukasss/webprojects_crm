@@ -16,7 +16,7 @@ class WPProjectsLoginsConnection extends BaseModel
      * Table name
      * @var string
      */
-    protected $table = ' wp_projects_logins_connection';
+    protected $table = 'wp_projects_logins_connection';
     /**
      * Fields which will be manipulated
      * @var array

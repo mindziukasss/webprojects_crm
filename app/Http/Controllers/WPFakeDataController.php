@@ -9,6 +9,7 @@ use App\Model\WPLogins;
 use App\Model\WPLoginsName;
 use App\Model\WPPersons;
 use App\Model\WPProjects;
+use App\Model\WPProjectsLoginsConnection;
 use Faker\Factory;
 use Illuminate\Http\Request;
 
@@ -110,6 +111,19 @@ class WPFakeDataController extends Controller
                 'user' => $faker->userName,
                 'password' => $faker->password,
                 'login_url' => $faker->url
+            ]);
+        }
+    }
+
+    public function generateProjectsLoginsConnection(int $count = 2)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++) {
+            WPProjectsLoginsConnection::create([
+                'id' => $faker->uuid,
+                'projects_id' => WPProjects::all()->random()->id,
+                'logins_id' => WPLogins::all()->random()->id,
             ]);
         }
     }

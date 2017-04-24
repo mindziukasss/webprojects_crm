@@ -41,5 +41,10 @@ Route::get('/logins', ['uses' => 'WPLoginsController@index']);
 Route::get('/generate-fake-data/logins/{count?}',
     ['uses' => 'WPFakeDataController@generateLogins']);
 
+Route::get('/generate-fake-data/projects_logins_connection/{count?}',
+    ['uses' => 'WPFakeDataController@generateProjectsLoginsConnection']);
+
+
+
 
 
