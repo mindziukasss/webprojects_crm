@@ -9,7 +9,6 @@
 namespace App\Model;
 
 
-
 class WPProjects extends BaseModel
 
 {

@@ -9,7 +9,6 @@
 namespace App\Model;
 
 
-
 class WPLogins extends BaseModel
 {
 
@@ -22,6 +21,6 @@ class WPLogins extends BaseModel
      * Fields which will be manipulated
      * @var array
      */
-    protected $fillable = ['id', 'logins_name_id', 'user', 'password', 'login_url' ];
+    protected $fillable = ['id', 'logins_name_id', 'user', 'password', 'login_url'];
 
 }

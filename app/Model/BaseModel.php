@@ -24,6 +24,7 @@ class BaseModel extends Model
      */
     public $incrementing = false;
     public $updated_at = false;
+
     /**
      * Boot function from laravel.
      */
@@ -33,10 +34,14 @@ class BaseModel extends Model
 
         static::creating(function ($model) {
 
-            $model->{$model->getKeyName()} = (string) $model->generateNewId();
+            $model->{$model->getKeyName()} = (string)$model->generateNewId();
         });
     }
 
+    /**
+     *
+     * @return \Ramsey\Uuid\UuidInterface
+     */
     public function generateNewId()
     {
         if (isset($this->attributes['id'])) {

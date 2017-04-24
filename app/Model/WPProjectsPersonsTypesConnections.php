@@ -9,7 +9,6 @@
 namespace App\Model;
 
 
-
 class WPProjectsPersonsTypesConnections extends BaseModel
 {
     /**Table name
@@ -21,5 +20,5 @@ class WPProjectsPersonsTypesConnections extends BaseModel
      * @var array
      * employe_types_id is wp_projects_persons_types table id.
      */
-    protected $fillable =['id', 'projects_id', 'persons_id', 'employe_types_id', 'comment'];
+    protected $fillable = ['id', 'projects_id', 'persons_id', 'employe_types_id', 'comment'];
 }

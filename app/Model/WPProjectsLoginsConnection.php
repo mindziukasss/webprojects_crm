@@ -9,7 +9,6 @@
 namespace App\Model;
 
 
-
 class WPProjectsLoginsConnection extends BaseModel
 {
     /**

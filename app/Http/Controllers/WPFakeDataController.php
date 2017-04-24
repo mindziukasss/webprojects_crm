@@ -18,6 +18,10 @@ use Illuminate\Http\Request;
 
 class WPFakeDataController extends Controller
 {
+    /**
+     * generate fake data Persons to DB
+     * @param int $count
+     */
     public function generatePersons(int $count = 5)
     {
         $faker = Factory::create('lt_LT');
@@ -33,6 +37,10 @@ class WPFakeDataController extends Controller
         WPPersons::insert($data);
     }
 
+    /**
+     * generate fake data Clients to DB
+     * @param int $count
+     */
     public function generateClients(int $count = 5)
     {
         $faker = Factory::create();
@@ -46,6 +54,10 @@ class WPFakeDataController extends Controller
 
     }
 
+    /**
+     * generate fake data Projects to DB
+     * @param int $count
+     */
     public function generateProjects(int $count = 3)
     {
         $faker = Factory::create();
@@ -61,6 +73,10 @@ class WPFakeDataController extends Controller
         }
     }
 
+    /**
+     * generate fake data ClientsPersonsType to DB
+     * @param int $count
+     */
     public function generateClientsPersonsType(int $count = 3)
     {
         $faker = Factory::create();
@@ -75,6 +91,10 @@ class WPFakeDataController extends Controller
         }
     }
 
+    /**
+     * generate fake data ClientsPersonsConnections to DB
+     * @param int $count
+     */
     public function generateClientsPersonsConnections(int $count = 2)
     {
         $faker = Factory::create();
@@ -90,6 +110,10 @@ class WPFakeDataController extends Controller
         }
     }
 
+    /**
+     * generate fake data LoginsName to DB
+     * @param int $count
+     */
     public function generateLoginsName(int $count = 2)
     {
         $faker = Factory::create();
@@ -103,6 +127,10 @@ class WPFakeDataController extends Controller
         }
     }
 
+    /**
+     * generate fake data Logins to DB
+     * @param int $count
+     */
     public function generateLogins(int $count = 2)
     {
         $faker = Factory::create();
@@ -118,6 +146,10 @@ class WPFakeDataController extends Controller
         }
     }
 
+    /**
+     * generate fake ProjectsLoginsConnection to DB
+     * @param int $count
+     */
     public function generateProjectsLoginsConnection(int $count = 2)
     {
         $faker = Factory::create();
@@ -131,6 +163,10 @@ class WPFakeDataController extends Controller
         }
     }
 
+    /**
+     * generate fake data ProjectsPersonsTypes to DB
+     * @param int $count
+     */
     public function generateProjectsPersonsTypes(int $count = 2)
     {
         $faker = Factory::create();
@@ -144,7 +180,10 @@ class WPFakeDataController extends Controller
         }
     }
 
-
+    /**
+     * generate fake data ProjectsPersonsTypesConnections to DB
+     * @param int $count
+     */
     public function generateProjectsPersonsTypesConnections(int $count = 2)
     {
         $faker = Factory::create();
@@ -160,6 +199,10 @@ class WPFakeDataController extends Controller
         }
     }
 
+    /**
+     * generate fake data ProjectsTypes to DB
+     * @param int $count
+     */
     public function generateProjectsTypes(int $count = 2)
     {
         $faker = Factory::create();

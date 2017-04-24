@@ -9,7 +9,6 @@
 namespace App\Model;
 
 
-
 class WPLoginsName extends BaseModel
 {
 

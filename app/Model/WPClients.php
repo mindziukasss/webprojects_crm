@@ -9,7 +9,6 @@
 namespace App\Model;
 
 
-
 class WPClients extends BaseModel
 
 {
@@ -17,12 +16,12 @@ class WPClients extends BaseModel
      * table name
      * @var string
      */
-   protected $table = 'wp_clients';
+    protected $table = 'wp_clients';
 
     /**
      * Fields which will be manipulated
      * @var array
      */
 
-   protected $fillable = ['id', 'name', 'client_type'];
+    protected $fillable = ['id', 'name', 'client_type'];
 }

@@ -9,7 +9,6 @@
 namespace App\Model;
 
 
-
 class WPClientsPersonsConnections extends BaseModel
 {
     /**
