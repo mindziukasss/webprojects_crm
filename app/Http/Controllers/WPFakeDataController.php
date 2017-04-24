@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\WPClients;
+use App\Model\WPClientsPersonsConnections;
 use App\Model\WPClientsPersonsTypes;
 use App\Model\WPPersons;
 use App\Model\WPProjects;
@@ -67,6 +68,23 @@ class WPFakeDataController extends Controller
             ]);
         }
     }
+
+    public function generateClientsPersonsConnections(int $count = 2)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++) {
+            WPClientsPersonsConnections::create([
+                'id' => $faker->uuid,
+                'clients_id' => WPClients::all()->random()->id,
+                'person_id' => WPPersons::all()->random()->id,
+                'clients_persons_type_id'=> WPClientsPersonsTypes::all()->random()->id,
+                'comment' => $faker->text
+            ]);
+        }
+    }
+
+
 
 
 }

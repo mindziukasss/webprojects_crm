@@ -23,7 +23,7 @@ class BaseModel extends Model
      * @var bool
      */
     public $incrementing = false;
-
+    public $updated_at = false;
     /**
      * Boot function from laravel.
      */
@@ -32,6 +32,7 @@ class BaseModel extends Model
         parent::boot();
 
         static::creating(function ($model) {
+
             $model->{$model->getKeyName()} = (string) $model->generateNewId();
         });
     }
@@ -44,5 +45,6 @@ class BaseModel extends Model
 
         return Uuid::uuid4();
     }
+
 
 }

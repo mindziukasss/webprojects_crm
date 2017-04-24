@@ -30,3 +30,6 @@ Route::get('/clients_persons_type', ['uses' => 'WPClientsPersonsTypesController@
 Route::get('/generate-fake-data/clients_persons_type/{count?}',
     ['uses' => 'WPFakeDataController@generateClientsPersonsType']);
 
+Route::get('/generate-fake-data/clients_persons_connections/{count?}',
+    ['uses' => 'WPFakeDataController@generateClientsPersonsConnections']);
+
