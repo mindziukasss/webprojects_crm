@@ -45,6 +45,15 @@ Route::get('/generate-fake-data/projects_logins_connection/{count?}',
     ['uses' => 'WPFakeDataController@generateProjectsLoginsConnection']);
 
 
+Route::get('/projects-persons-types', ['uses' => 'WPProjectsPersonsTypes@index']);
+Route::get('/generate-fake-data/projects-persons-types/{count?}',
+    ['uses' => 'WPFakeDataController@generateProjectsPersonsTypes']);
+
+Route::get('/generate-fake-data/projects-persons-types-connections/{count?}',
+    ['uses' => 'WPFakeDataController@generateProjectsPersonsTypesConnections']);
+
+
+
 
 
 

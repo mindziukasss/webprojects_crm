@@ -10,6 +10,8 @@ use App\Model\WPLoginsName;
 use App\Model\WPPersons;
 use App\Model\WPProjects;
 use App\Model\WPProjectsLoginsConnection;
+use App\Model\WPProjectsPersonsTypes;
+use App\Model\WPProjectsPersonsTypesConnections;
 use Faker\Factory;
 use Illuminate\Http\Request;
 
@@ -124,6 +126,36 @@ class WPFakeDataController extends Controller
                 'id' => $faker->uuid,
                 'projects_id' => WPProjects::all()->random()->id,
                 'logins_id' => WPLogins::all()->random()->id,
+            ]);
+        }
+    }
+
+    public function generateProjectsPersonsTypes(int $count = 2)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++) {
+            WPProjectsPersonsTypes::create([
+                'id' => $faker->uuid,
+                'name' => $faker->userName,
+                'description' => $faker->text
+            ]);
+        }
+    }
+
+
+
+    public function generateProjectsPersonsTypesConnections(int $count = 2)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++) {
+            WPProjectsPersonsTypesConnections::create([
+                'id' => $faker->uuid,
+                'projects_id' => WPProjects::all()->random()->id,
+                'persons_id' => WPPersons::all()->random()->id,
+                'employe_types_id' => WPProjectsPersonsTypes::all()->random()->id,
+                'comments' => $faker->text
             ]);
         }
     }
