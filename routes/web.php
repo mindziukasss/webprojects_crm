@@ -33,3 +33,9 @@ Route::get('/generate-fake-data/clients_persons_type/{count?}',
 Route::get('/generate-fake-data/clients_persons_connections/{count?}',
     ['uses' => 'WPFakeDataController@generateClientsPersonsConnections']);
 
+Route::get('/loginsname', ['uses' => 'WPLoginsNameController@index']);
+Route::get('/generate-fake-data/logins-name/{count?}',
+    ['uses' => 'WPFakeDataController@generateLoginsName']);
+
+
+
