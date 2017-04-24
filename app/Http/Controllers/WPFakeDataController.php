@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\WPClients;
 use App\Model\WPPersons;
+use App\Model\WPProjects;
 use Faker\Factory;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class WPFakeDataController extends Controller
 {
     public function generatePersons(int $count = 5)
     {
-        $faker = Factory::create();
+        $faker = Factory::create('lt_LT');
         $data = [];
         for ($i = 0; $i < $count; $i++) {
             $data[] = [
@@ -35,6 +36,20 @@ class WPFakeDataController extends Controller
             ]);
         }
 
+    }
+    public function generateProjects(int $count = 3)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++) {
+            WPProjects::created([
+                'id' => $faker->uuid,
+                'clients_id' => WPClients::all()->random()->id,
+                'name' => $faker->randomElement(['Simple pr', 'Big data', 'Car_shop']),
+                'type' => $faker->randomElement(['SASS', 'SHOP', 'WEB']),
+                'description' => $faker->text
+            ]);
+        }
     }
 
 
