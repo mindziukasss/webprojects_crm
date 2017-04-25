@@ -13,6 +13,10 @@
 
 use App\Model\WPPersons;
 
+Route::get('/', function (){
+    return view('welcome');
+});
+
 Route::group(['prefix' => 'generate-fake-data'], function () {
 
     Route::get('/persons/{count?}', ['uses' => 'WPFakeDataController@generatePersons']);

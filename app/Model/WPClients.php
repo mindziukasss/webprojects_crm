@@ -24,4 +24,23 @@ class WPClients extends BaseModel
      */
 
     protected $fillable = ['id', 'name', 'client_type'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+
+    public function projects()
+    {
+       return $this->hasMany(WPProjects::class, 'clients_id', 'id');
+    }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function clientsPersonsConnections()
+    {
+        return $this->hasMany(WPClientsPersonsConnections::class, 'clients_id', 'id')->with(['personData', 'clientsPersonsTypeData']) ;
+    }
+
+
 }

@@ -9,8 +9,13 @@
 namespace App\Model;
 
 
-class WPClientsPersonsConnections extends BaseModel
+use Illuminate\Database\Eloquent\Model;
+
+class WPClientsPersonsConnections extends Model
 {
+
+    public $updated_at = false;
+
     /**
      * Table name
      * @var string
@@ -23,4 +28,21 @@ class WPClientsPersonsConnections extends BaseModel
      */
 
     protected $fillable = ['id', 'clients_id', 'person_id', 'clients_persons_type_id', 'comment'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function personData ()
+    {
+        return $this->hasMany(WPPersons::class, 'id', 'person_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function clientsPersonsTypeData ()
+    {
+      return $this->hasOne(WPClientsPersonsTypes::class, 'id', 'clients_persons_type_id' );
+    }
+
 }
