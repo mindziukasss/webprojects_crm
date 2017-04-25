@@ -9,7 +9,9 @@
 namespace App\Model;
 
 
-class WPProjectsPersonsTypesConnections extends BaseModel
+use Illuminate\Database\Eloquent\Model;
+
+class WPProjectsPersonsTypesConnections extends Model
 {
     /**Table name
      * @var string

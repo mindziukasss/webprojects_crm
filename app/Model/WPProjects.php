@@ -27,4 +27,14 @@ class WPProjects extends BaseModel
     {
         return $this->hasOne(WPClients::class, 'id', 'clients_id');
     }
+    public function projectTypeData()
+    {
+        return $this->hasOne(WPProjectsTypes::class, 'project_id', 'id');
+    }
+
+    public function ProjectsPersonsTypesConnectionsData()
+    {
+        return $this->hasOne(WPProjectsPersonsTypesConnections::class, 'projects_id', 'id');
+    }
+
 }

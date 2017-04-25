@@ -14,7 +14,8 @@ class WPPersonsController extends Controller
      */
     public function index()
     {
-        return WPPersons::orderBy('created_at', 'desc')->paginate(5);
+        return WPPersons::with(['ProjectsPersonsTypesConnectionsData'])->get();
+//        return WPPersons::orderBy('created_at', 'desc')->paginate(5);
     }
 
     /**

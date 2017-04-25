@@ -17,4 +17,16 @@ class WPPersons extends BaseModel
      * @var array
      */
     protected $fillable = ['id', 'name', 'email', 'phone'];
+
+
+//    public function clientsPersonsTypesData()
+//    {
+//        return $this->hasOne(WPClientsPersonsTypes::class, 'id');
+//    }
+
+    public function ProjectsPersonsTypesConnectionsData()
+    {
+        return $this->hasOne(WPProjectsPersonsTypesConnections::class, 'persons_id', 'id')->with(['personsData', 'projectsData', 'employeTypesData']);
+    }
+
 }
