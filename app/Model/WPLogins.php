@@ -23,4 +23,9 @@ class WPLogins extends BaseModel
      */
     protected $fillable = ['id', 'logins_name_id', 'user', 'password', 'login_url'];
 
+    public function loginsNameData()
+    {
+        return $this->hasOne(WPLoginsName::class, 'id', 'logins_name_id');
+    }
+
 }

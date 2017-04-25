@@ -32,7 +32,7 @@ class WPClientsPersonsConnections extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function personData ()
+    public function personData()
     {
         return $this->hasMany(WPPersons::class, 'id', 'person_id');
     }
@@ -40,9 +40,9 @@ class WPClientsPersonsConnections extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function clientsPersonsTypeData ()
+    public function clientsPersonsTypeData()
     {
-      return $this->hasOne(WPClientsPersonsTypes::class, 'id', 'clients_persons_type_id' );
+        return $this->hasOne(WPClientsPersonsTypes::class, 'id', 'clients_persons_type_id');
     }
 
 }

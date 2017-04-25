@@ -22,4 +22,9 @@ class WPProjects extends BaseModel
      * @var array
      */
     protected $fillable = ['id', 'clients_id', 'name', 'type', 'description'];
+
+    public function clientsData ()
+    {
+        return $this->hasOne(WPClients::class, 'id', 'clients_id');
+    }
 }

@@ -14,7 +14,8 @@ class WPProjectsController extends Controller
      */
     public function index()
     {
-        return WPProjects::orderBy('created_at', 'desc')->paginate(5);
+        return WPProjects::with(['projectData'])->get();
+//        return WPProjects::orderBy('created_at', 'desc')->paginate(5);
     }
 
     /**

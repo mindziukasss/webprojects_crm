@@ -21,4 +21,14 @@ class WPProjectsLoginsConnection extends BaseModel
      * @var array
      */
     protected $fillable = ['id', 'projects_id', 'logins_id'];
+
+    public function projectsData ()
+    {
+        return $this->hasMany(WPProjects::class, 'id', 'projects_id');
+    }
+
+    public function loginsData ()
+    {
+        return $this->hasMany(WPLogins::class, 'id', 'logins_id');
+    }
 }

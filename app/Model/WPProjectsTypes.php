@@ -23,4 +23,12 @@ class WPProjectsTypes extends BaseModel
      * @var array
      */
     protected $fillable = ['id', 'project_id', 'name', 'types', 'description'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function projectData()
+    {
+        return $this->hasOne(WPProjects::class, 'id', 'project_id');
+    }
 }
