@@ -16,7 +16,8 @@ use Ramsey\Uuid\Uuid;
 class BaseModel extends Model
 {
     use SoftDeletes;
-
+    
+    protected  $hidden = ['id', 'count', 'created_at', 'updated_at', 'deleted_at'];
     /**
      * Indicates if the IDs are auto-incrementing.
      *

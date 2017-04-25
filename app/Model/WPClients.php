@@ -25,6 +25,7 @@ class WPClients extends BaseModel
 
     protected $fillable = ['id', 'name', 'client_type'];
 
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
