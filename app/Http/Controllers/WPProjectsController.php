@@ -14,7 +14,9 @@ class WPProjectsController extends Controller
      */
     public function index()
     {
-        return WPProjects::with(['clientsData', 'projectTypeData', 'projectsPersonsTypesConnectionsData'])->get();
+
+        return view('content.projects');
+//        return WPProjects::with(['clientsData', 'projectTypeData', 'projectsPersonsTypesConnectionsData'])->get();
 //        return WPProjects::orderBy('created_at', 'desc')->paginate(5);
     }
 

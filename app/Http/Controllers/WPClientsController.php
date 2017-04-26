@@ -14,14 +14,19 @@ class WPClientsController extends Controller
      */
     public function index()
     {
-        return WPClients::with(['projects','clientsPersonsConnections'])->get();
+//        return WPClients::with(['projects','clientsPersonsConnections'])->get();
 
-////     $clients = WPClients::all();
-//        $clients = [
-//            "client" => WPClients::with(['projects','clientsPersonsConnections'])->get()
-//        ];
+//     $clients = WPClients::all();
+        $configuration = [];
+
+        $configuration['clients'] = WPClients::with(['projects'])->get();
+        $configuration['totalCount'] = sizeof($configuration['clients']);
+
+        return view('content.clients', $configuration);
+
 //        return view('data', $clients);
-//        return WPClients::orderBy('created_at', 'desc')->paginate(4);
+//       return WPClients::orderBy('created_at', 'desc')->paginate(4);
+
     }
 
     /**

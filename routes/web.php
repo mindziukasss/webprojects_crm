@@ -14,7 +14,7 @@
 use App\Model\WPPersons;
 
 Route::get('/', function (){
-    return view('welcome');
+    return view('main');
 });
 
 Route::group(['prefix' => 'generate-fake-data'], function () {
