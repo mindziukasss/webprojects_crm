@@ -3,11 +3,27 @@
 @section('title', trans('app.projects'))
 
 @section('content')
-
+   <div class ="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Projects name</th>
+                <th>Clients</th>
+                <th>Staff</th>
+            </tr>
+        </thead>
+        <tbody>
     @foreach($projects as $project)
-        <li>{{ $project['name'] }}</li>
-        <li>{{ $project['clients_data']['name']}}</li>
-        <li>{{ sizeof($project['projects_persons_types_connections_data'])}}</li>
+        <tr>
+
+            <td>{{ $project['name'] }}</td>
+            <td>{{ $project['clients_data']['name']}}</td>
+            <td>{{ sizeof($project['projects_persons_types_connections_data'])}}</td>
+        </tr>
     @endforeach
+        </tbody>
+    </table>
+   </div>
 @endsection
+
 

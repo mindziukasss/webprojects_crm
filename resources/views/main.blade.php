@@ -8,12 +8,15 @@
     @include('meta')
 </head>
 <body>
-    @include('header')
 
-    <h1>@yield('title')</h1>
-    @yield('content')
+    <div class="container">
+        @include('header')
 
-    @include('footer')
+        <h1>@yield('title')</h1>
+        @yield('content')
+
+        @include('footer')
+    </div>
 </body>
     @include('js')
     @include('scripts')
