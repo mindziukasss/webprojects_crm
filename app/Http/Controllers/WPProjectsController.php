@@ -14,10 +14,14 @@ class WPProjectsController extends Controller
      */
     public function index()
     {
+        $configuration = [];
+        $configuration['projects'] = WPProjects::with(['clientsData','ProjectsPersonsTypesConnectionsData'])
+                                    ->get()->toArray();
 
-        return view('content.projects');
-//        return WPProjects::with(['clientsData', 'projectTypeData', 'projectsPersonsTypesConnectionsData'])->get();
-//        return WPProjects::orderBy('created_at', 'desc')->paginate(5);
+
+//       return WPProjects::with(['clientsData','ProjectsPersonsTypesConnectionsData'])->get();
+//        return WPProjects::orderBy('created_at', 'desc')->get();
+       return view('content.projects', $configuration);
     }
 
     /**
