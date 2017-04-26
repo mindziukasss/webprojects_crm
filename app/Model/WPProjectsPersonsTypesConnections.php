@@ -12,7 +12,10 @@ namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 
 class WPProjectsPersonsTypesConnections extends Model
+
 {
+     public $updated_at = false;
+
     protected  $hidden = ['id', 'count', 'created_at', 'updated_at', 'deleted_at'];
     /**Table name
      * @var string
