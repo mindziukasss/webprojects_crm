@@ -4,12 +4,14 @@
 
 @section('content')
    <div class ="container">
+       <div>Total Projects: {{ $totalPersons }}</div>
     <table class="table">
         <thead>
             <tr>
                 <th>Projects name</th>
                 <th>Clients</th>
                 <th>Staff</th>
+                <th>Name Perosns</th>
             </tr>
         </thead>
         <tbody>
@@ -18,7 +20,12 @@
 
             <td>{{ $project['name'] }}</td>
             <td>{{ $project['clients_data']['name']}}</td>
-            <td>{{ sizeof($project['projects_persons_types_connections_data'])}}</td>
+            <td>{{ sizeof($project['total_persons']) }}</td>
+            @foreach( $project['total_persons'] as $person )
+                @foreach($person['persons_data'] as $per)
+                <td>{{ $per['name'] }}</td>
+                    @endforeach
+            @endforeach
         </tr>
     @endforeach
         </tbody>

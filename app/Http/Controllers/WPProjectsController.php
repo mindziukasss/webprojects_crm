@@ -15,11 +15,12 @@ class WPProjectsController extends Controller
     public function index()
     {
         $configuration = [];
-        $configuration['projects'] = WPProjects::with(['clientsData','ProjectsPersonsTypesConnectionsData'])
+        $configuration['projects'] = WPProjects::with(['clientsData','totalPersons','projectTypeData'])
                                     ->get()->toArray();
+        $configuration['totalPersons'] = sizeof($configuration['projects']);
 
 
-//       return WPProjects::with(['clientsData','ProjectsPersonsTypesConnectionsData'])->get();
+//      return WPProjects::with(['clientsData','totalPersons','projectTypeData'])->get();
 //        return WPProjects::orderBy('created_at', 'desc')->get();
        return view('content.projects', $configuration);
     }

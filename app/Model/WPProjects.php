@@ -23,20 +23,20 @@ class WPProjects extends BaseModel
      */
     protected $fillable = ['id', 'clients_id', 'name', 'type', 'description'];
 
-    public function clientsData ()
+    public function clientsData()
     {
         return $this->hasOne(WPClients::class, 'id', 'clients_id');
     }
+
     public function projectTypeData()
     {
         return $this->hasOne(WPProjectsTypes::class, 'project_id', 'id');
     }
 
-    public function ProjectsPersonsTypesConnectionsData()
+    public function totalPersons()
     {
-        return $this->hasOne(WPProjectsPersonsTypesConnections::class, 'projects_id', 'id')->with(['personsData']);
+        return $this->hasMany(WPProjectsPersonsTypesConnections::class, 'projects_id', 'id')->
+        with('personsData');
     }
-
-
 
 }

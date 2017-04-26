@@ -26,7 +26,9 @@ class WPPersons extends BaseModel
 
     public function projectsPersonsTypesConnectionsData()
     {
-        return $this->hasMany(WPProjectsPersonsTypesConnections::class, 'persons_id', 'id')->with(['projectsData', 'employeTypesData']);
+        return $this->hasMany(WPProjectsPersonsTypesConnections::class, 'persons_id', 'id')
+            ->with(['projectsData', 'employeTypesData']);
+
     }
 
 }
